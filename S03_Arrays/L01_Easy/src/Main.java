@@ -96,6 +96,30 @@ public class Main {
         System.out.println( );
     }
 
+    public static void rotateArrayByK(int []A, int k) {
+        k = k % A.length;
+
+        reverse(A, 0, A.length - 1);
+        reverse(A, 0, k - 1);
+        reverse(A, k, A.length - 1);
+
+        for(int i = 0; i < A.length; i++) {
+            System.out.print(A[i] + " ");
+        }
+        System.out.println( );
+    }
+
+    public static void reverse(int []A, int start, int end) {
+        while(start < end) {
+            int swap = A[start];
+            A[start] = A[end];
+            A[end] = swap;
+
+            start++;
+            end--;
+        }
+    }
+
     public static void moveZeroesToEnd(int []A) {
         int idx = 0;
         for(int i = 0; i < A.length; i++) {
@@ -311,12 +335,12 @@ public class Main {
         System.out.println(count);
     }
 
-    static int longestSubArray(int[] arr, int k) {
+    public static int longestSubArray(int[] arr, int k) {
         HashMap<Integer, Integer> mp = new HashMap<>();
         int res = 0;
         int prefSum = 0;
 
-        for (int i = 0; i < arr.length; ++i) {
+        for (int i = 0; i < arr.length; i++) {
             prefSum += arr[i];
 
             if (prefSum == k) {
@@ -336,7 +360,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int []A = {10, 5, 2, 7, 1, -10}; // vary by problems.
+        int []A = {1, 2, 3, 4, 5, 6, 7}; // vary by problems.
         int []B = {2, 3, 4, 4, 5, 11, 12};
 
 //        largestElementInArray(A);
@@ -362,6 +386,10 @@ public class Main {
 //        leftShiftByK(A, 2);
 //        T.C. - O(N + d)
 //        S.C. - O(d)
+
+//        rotateArrayByK(A, 3);
+//        T.C. - O(N) + O(k) + O(N - k)
+//        S.C. - O(1)
 
 //        moveZeroesToEnd(A);
 //        T.C. - O(N)
@@ -404,7 +432,8 @@ public class Main {
 //        S.C. - O(1)
 
 //        longestSubArrayPositive(A, 15);
-        int ans = longestSubArray(A, 15);
-        System.out.println(ans);
+
+//        int ans = longestSubArray(A, 15);
+//        System.out.println(ans);
     }
 }
