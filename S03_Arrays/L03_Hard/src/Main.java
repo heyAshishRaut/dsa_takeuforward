@@ -292,8 +292,45 @@ public class Main {
         System.out.println(max);
     }
 
+    public static void countSubArrayWithXORasK01(int []nums, int k) {
+        int count = 0;
+        for(int i = 0; i < nums.length; i++) {
+            int xor = 0;
+            for(int j = i; j < nums.length; j++) {
+                xor = xor ^ nums[j];
+
+                if(xor == k) {
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+
+    public static void countSubArrayWithXORasK02(int []nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int xor = 0, count = 0;
+        for(int i = 0; i < nums.length; i++) {
+            xor = xor ^ nums[i];
+            if(xor == k) {
+                count++;
+            }
+            if(map.containsKey(k ^ nums[i])) {
+                count = count + map.get(k ^ nums[i]);
+            }
+
+            if(map.containsKey(xor)) {
+                map.put(xor, map.get(xor) + 1);
+            }
+            else {
+                map.put(xor, 1);
+            }
+        }
+        System.out.println(count);
+    }
+
     public static void main(String[] args) {
-        int []nums = {1, -1, 3, 2, -2, -8, 1, 7, 10, 23};
+        int []nums = {4, 2, 2, 6, 4};
 
 //        pascalTriangleType01(1, 1);
 //        pascalTriangleType02(6);
@@ -309,6 +346,8 @@ public class Main {
 
 //        sumOfFourOptimised(nums, 0);
 
-        maxSubArrayWithSumZero(nums);
+//        maxSubArrayWithSumZero(nums);
+
+//        countSubArrayWithXORasK02(nums, 6);
     }
 }

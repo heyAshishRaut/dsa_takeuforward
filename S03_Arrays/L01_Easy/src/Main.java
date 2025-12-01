@@ -165,7 +165,7 @@ public class Main {
     }
 
     public static void unionOfSortedArray02(int []A, int []B) {
-        ArrayList<Integer> a = new ArrayList<Integer>();
+        ArrayList<Integer> a = new ArrayList<>();
         int size1 = A.length, size2 = B.length, i = 0, j = 0;
 
         while(i < size1 && j < size2) {
@@ -205,7 +205,7 @@ public class Main {
 
     public static void intersectionOfSortedArray01(int []A, int []B) {
         boolean []isVisited = new boolean[B.length];
-        ArrayList<Integer> ar = new ArrayList<Integer>();
+        ArrayList<Integer> ar = new ArrayList<>();
 
         for(int i = 0; i < A.length; i++) {
             for(int j = 0; j < B.length; j++) {
