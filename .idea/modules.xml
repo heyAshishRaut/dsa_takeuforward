@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA.iml" filepath="$PROJECT_DIR$/.idea/DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S04_Binary_Search/L01_BS_On_1DArrays/L01_BS_On_1DArrays.iml" filepath="$PROJECT_DIR$/S04_Binary_Search/L01_BS_On_1DArrays/L01_BS_On_1DArrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/S03_Arrays/L01_Easy/L01_Easy.iml" filepath="$PROJECT_DIR$/S03_Arrays/L01_Easy/L01_Easy.iml" />
       <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/L01_Java_Basics/L01_Java_Basics.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/L01_Java_Basics/L01_Java_Basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/S02_Sorting_Techniques/L01_Sorting_I/L01_Sorting_I.iml" filepath="$PROJECT_DIR$/S02_Sorting_Techniques/L01_Sorting_I/L01_Sorting_I.iml" />
@@ -17,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/S01_Learn_The_Basics.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/S01_Learn_The_Basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/S02_Sorting_Techniques/S02_Sorting_Techniques.iml" filepath="$PROJECT_DIR$/S02_Sorting_Techniques/S02_Sorting_Techniques.iml" />
       <module fileurl="file://$PROJECT_DIR$/S03_Arrays/S03_Arrays.iml" filepath="$PROJECT_DIR$/S03_Arrays/S03_Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S04_Binary_Search/S04_Binary_Search.iml" filepath="$PROJECT_DIR$/S04_Binary_Search/S04_Binary_Search.iml" />
     </modules>
   </component>
 </project>

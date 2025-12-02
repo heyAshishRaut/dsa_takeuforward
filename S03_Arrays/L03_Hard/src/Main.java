@@ -329,8 +329,120 @@ public class Main {
         System.out.println(count);
     }
 
+    public static void mergeTwoSortedArrays(int[] nums1, int m, int[] nums2, int n) {
+        if(nums2.length == 0) {
+            return;
+        }
+
+        int idx = nums1.length - 1;
+        int i = m - 1, j = n - 1;
+
+        while(i >= 0 && j >= 0) {
+            if(nums1[i] > nums2[j]) {
+                nums1[idx--] = nums1[i--];
+            } else {
+                nums1[idx--] = nums2[j--];
+            }
+        }
+
+        while(j >= 0) {
+            nums1[idx--] = nums2[j--];
+        }
+    }
+
+    public static void mergeIntervals01(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+
+        for(int i = 0; i < intervals.length; i++) {
+            int start = intervals[i][0];
+            int end = intervals[i][1];
+
+            int j = i + 1;
+            while(j < intervals.length && intervals[j][0] <= end) {
+                end = Math.max(intervals[j][1], end);
+                j++;
+            }
+            ArrayList<Integer> temp = new ArrayList<>();
+            temp.add(start);
+            temp.add(end);
+
+            list.add(temp);
+            i = j - 1;
+        }
+
+        System.out.println(list);
+    }
+
+    public static void mergeIntervals02(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+
+        for(int i = 0; i < intervals.length; i++) {
+            if(list.isEmpty() || list.getLast().get(1) < intervals[i][0]) {
+                ArrayList<Integer> temp = new ArrayList<>();
+                temp.add(intervals[i][0]);
+                temp.add(intervals[i][1]);
+
+                list.add(temp);
+            }
+            else {
+                ArrayList<Integer> lastList = list.getLast();
+                int maxVal = Math.max(lastList.get(1), intervals[i][1]);
+                list.getLast().set(1, maxVal);
+            }
+        }
+
+        System.out.println(list);
+    }
+
+    public static void missingAndRepeatingNumber(int []A) {
+//        [1, 2, 3, 6, 7, 5, 7]
+
+        boolean missing = false, repeating = false;
+        int []res = new int[A.length + 1];
+
+        for(int i = 0; i < A.length; i++) {
+            res[A[i]]++;
+        }
+
+        for(int i = 1; i < res.length; i++) {
+            if(missing && repeating) {
+                break;
+            }
+            if(res[i] == 0) {
+                System.out.println("Missing number is " + i);
+                missing = true;
+            }
+            if(res[i] > 1) {
+                System.out.println("Repeating number is " + i);
+                repeating = true;
+            }
+        }
+    }
+
+    public static void maxProductSubArray(int []A) {
+        int prefix = 1, suffix = 1;
+        int res = 0;
+
+        for(int i = 0; i < A.length; i++) {
+            prefix = prefix * A[i];
+            suffix = suffix * A[A.length - 1 - i];
+
+            int tempMax = Math.max(prefix, suffix);
+
+            res = Math.max(res, tempMax);
+        }
+
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
-        int []nums = {4, 2, 2, 6, 4};
+        int []nums = {1,2,3,4,5,0};
+
+        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
 
 //        pascalTriangleType01(1, 1);
 //        pascalTriangleType02(6);
@@ -349,5 +461,13 @@ public class Main {
 //        maxSubArrayWithSumZero(nums);
 
 //        countSubArrayWithXORasK02(nums, 6);
+
+//        mergeTwoSortedArrays(nums, nums.length, nums, nums.length);
+
+//        mergeIntervals02(intervals);
+
+//        missingAndRepeatingNumber(nums);
+
+        maxProductSubArray(nums);
     }
 }
