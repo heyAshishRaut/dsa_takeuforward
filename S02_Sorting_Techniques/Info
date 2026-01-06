@@ -2,3 +2,12 @@ Sorting Techniques
 
 - Sorting I
 - Sorting II
+
+| Algorithm      | Stable  | In-Place
+| -------------- | ------  | --------
+| Bubble Sort    | ✅      | ✅
+| Insertion Sort | ✅      | ✅
+| Selection Sort | ❌      | ✅
+| Merge Sort     | ✅      | ❌
+| Quick Sort     | ❌      | ✅
+| Heap Sort      | ❌      | ✅

@@ -1,4 +1,6 @@
 public class Main {
+//    Merge Sort is a divide-and-conquer sorting algorithm that recursively divides the array into halves,
+//    sorts each half, and then merges the sorted halves to produce a fully sorted array.
     public static void mergeSort(int low, int high, int []A) {
         int mid = (low + high) / 2;
 
@@ -6,7 +8,11 @@ public class Main {
             return;
         }
         else {
+//          if A - [2, 3, 1, 5, 4]
+
+//          [2, 3, 1]
             mergeSort(low, mid, A);
+//          [5, 4]
             mergeSort(mid + 1, high, A);
 
             merge(low, mid, high, A);
@@ -67,7 +73,6 @@ public class Main {
 
     public static int partition(int []A, int low, int high) {
         int pivot = A[high];
-
         int i = low - 1;
 
         for(int j = low; j <= high - 1; j++) {
@@ -122,8 +127,12 @@ public class Main {
         int []A = {10, 2, 3, 7, 5, 8, 9, 4, 1, 6};
 
 //        mergeSort(0, A.length - 1, A);
+//        T.C. O(n log n)
+//        S.C. O(n)
 
 //        quickSort(A, 0, A.length - 1);
+//        T.C. O(n^2)
+//        S.C. O(log n)
 
 //        recursiveBubbleSort(A, A.length);
 

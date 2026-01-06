@@ -51,6 +51,7 @@ public class Main {
                 A[++idx] = A[i];
             }
         }
+        idx++;
         while(idx < A.length) {
             A[idx++] = Integer.MAX_VALUE;
         }
@@ -170,13 +171,13 @@ public class Main {
 
         while(i < size1 && j < size2) {
             if(A[i] <= B[j]) {
-                if(a.isEmpty() || a.get(a.size() - 1) != A[i]) {
+                if(a.isEmpty() || a.getLast() != A[i]) {
                     a.add(A[i]);
                 }
                 i++;
             }
             else {
-                if(a.isEmpty() || a.get(a.size() - 1) != B[j]) {
+                if(a.isEmpty() || a.getLast() != B[j]) {
                     a.add(B[j]);
                 }
                 j++;
@@ -184,14 +185,14 @@ public class Main {
         }
 
         while(i < size1) {
-            if(a.isEmpty() || a.get(a.size() - 1) != A[i]) {
+            if(a.isEmpty() || a.getLast() != A[i]) {
                 a.add(A[i]);
                 i++;
             }
         }
 
         while(j < size2) {
-            if(a.isEmpty() || a.get(a.size() - 1) != B[j]) {
+            if(a.isEmpty() || a.getLast() != B[j]) {
                 a.add(B[j]);
                 j++;
             }
@@ -270,17 +271,19 @@ public class Main {
 
     public static void consecutiveOnes(int []A) {
         int max = 0,count = 0;
+
         for(int i = 0; i < A.length; i++) {
             if(A[i] == 1) {
                 count++;
             }
             else {
-                if(max < count) {
-                    max = count;
-                    count = 0;
-                }
+                max = Math.max(max, count);
+                count = 0;
             }
         }
+
+        // If array consist of all ones
+        max = Math.max(max, count);
         System.out.println("Count - " + max);
     }
 
@@ -313,26 +316,23 @@ public class Main {
     }
 
     public static void longestSubArrayPositive(int []A, int val) {
-        int count = 0;
-
+        int max = 0;
         for(int i = 0; i < A.length; i++) {
-            int sum = 0, j = i;
-
-            while(j < A.length) {
+            int count = 0, sum = 0;
+            for(int j = i; j < A.length; j++) {
                 sum = sum + A[j];
+                count++;
+
                 if(sum == val) {
-                    if(count < (j - i + 1)) {
-                        count = j - i + 1;
-                        break;
-                    }
-                }
-                if(sum > val) {
+                    max = Math.max(max, count);
                     break;
                 }
-                j++;
+                else if(sum > val) {
+                    break;
+                }
             }
         }
-        System.out.println(count);
+        System.out.println(max);
     }
 
     public static int longestSubArray(int[] arr, int k) {
@@ -360,7 +360,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int []A = {1, 2, 3, 4, 5, 6, 7}; // vary by problems.
+        int []A = {-3, 2, 1}; // vary by problems.
         int []B = {2, 3, 4, 4, 5, 11, 12};
 
 //        largestElementInArray(A);
@@ -431,8 +431,7 @@ public class Main {
 //        T.C. - O(N)
 //        S.C. - O(1)
 
-//        longestSubArrayPositive(A, 15);
-
+//        longestSubArrayPositive(A, 6);
 //        int ans = longestSubArray(A, 15);
 //        System.out.println(ans);
     }

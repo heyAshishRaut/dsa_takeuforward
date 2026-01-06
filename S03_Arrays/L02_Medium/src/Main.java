@@ -357,6 +357,7 @@ public class Main {
                 int swap = A[i][left];
                 A[i][left] = A[i][right];
                 A[i][right] = swap;
+
                 left++;
                 right--;
             }
@@ -374,7 +375,7 @@ public class Main {
         int top = 0, left = 0, bottom = A.length - 1, right = A.length - 1;
 
         while(top <= bottom && left <= right) {
-            // top
+            // Top
             for(int i = left; i <= right; i++) {
                 System.out.print(A[top][i] + "  ");
             }

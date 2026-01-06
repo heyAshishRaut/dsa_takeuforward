@@ -5,8 +5,8 @@ public class Main {
         if(num <= 0) {
             return;
         }
-        printDigits(num / 10);
-        System.out.print((num % 10) + " ");
+        printDigits(num / 10); // removes last digit
+        System.out.print((num % 10) + " "); // extract last digit
     }
 
     public static int countDigits(int num, int val) {
@@ -23,7 +23,7 @@ public class Main {
             System.out.println(1);
         }
         else {
-            int ans = (int)(Math.log10(num) + 1);
+            int ans = (int)(Math.log10(num) + 1); // if num == 0, error(infinity)
             System.out.println(ans);
         }
     }
@@ -52,6 +52,7 @@ public class Main {
     public static boolean isArmstrong(int num) {
         int original = num;
         int digits = (int)(Math.log10(num)) + 1;
+
         int cal = 0;
         while(num > 0) {
             cal = cal + (int)Math.pow(num % 10, digits);
@@ -128,6 +129,11 @@ public class Main {
     }
 
     // Euclidean Algorithm
+//    Any number that divides both a and b also divides the remainder a % b. Hence, the set of common divisors
+//    remains the same.
+//    By repeatedly replacing the larger number with the remainder, the numbers strictly decrease.
+//    When the remainder becomes 0, the other number is the GCD.
+
     public static int HCForGCDOptimised(int num1, int num2) {
         if(num2 <= 0) {
             return num1;
@@ -209,5 +215,6 @@ public class Main {
 //      11. HCF or GCD Optimised
         int ans = HCForGCDOptimised(10, 30);
         System.out.println(ans);
+//      T. C. O(log(min(a,b)))
     }
 }

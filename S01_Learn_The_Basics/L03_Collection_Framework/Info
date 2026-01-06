@@ -1,1 +1,46 @@
 Java Collection Framework
+The Java Collections Framework is a set of classes & interfaces that helps you store, manage, and manipulate groups of
+objects efficiently.
+
+| Interface | Used For             | DSA Examples           |
+| --------- | -------------------- | ---------------------- |
+| List      | Ordered, index-based | Arrays, Sliding Window |
+| Set       | Unique elements      | Remove duplicates      |
+| Queue     | FIFO / Priority      | BFS, Scheduling        |
+| Deque     | Double-ended         | Sliding Window         |
+| Map       | Key–Value            | Hashing problems       |
+
+--LIST INTERFACE
+
+Ordered
+Allows duplicates
+Index-based access
+
+--ArrayList
+
+| Operation     | Time  |
+| ------------- | ----- |
+| get(i)        | O(1)  |
+| add(end)      | O(1)* |
+| remove(index) | O(n)  |
+
+--LinkedList
+
+| Operation         | Time |
+| ----------------- | ---- |
+| get(i)            | O(n) |
+| add/remove (ends) | O(1) |
+
+--SET INTERFACE (NO DUPLICATE)
+
+--HashSet
+
+| Operation               | Time |
+| ----------------------- | ---- |
+| add / remove / contains | O(1) |
+
+--TreeSet
+
+| Operation    | Time     |
+| ------------ | -------- |
+| add / remove | O(log n) |

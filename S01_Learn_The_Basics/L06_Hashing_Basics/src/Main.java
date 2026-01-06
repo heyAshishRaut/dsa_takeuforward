@@ -1,5 +1,12 @@
 public class Main {
     public static void elementOccurrence(int []A) {
+//      Given an array, we have found the number of occurrences of each element in the array.
+//        Input: arr[] = {10,5,10,15,10,5};
+//        Output:
+//        10  3
+//        5  2
+//        15  1
+
         int max = -1;
         for(int i = 0; i < A.length; i++) {
             if(A[i] > max){
@@ -52,20 +59,20 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        int []A = {1, 1, 2, 3, 4, 4, 4, 5};
+        int []A = {1, 1, 2, 3, 4, 4, 4, 5};
 //        elementOccurrence(A);
 
 //        T.C. - O(maxElementOfArray) ~ O(N)
 //        S.C. - O(maxElementOfArray) ~ O(N)
 
 //        int []A = {1, 1, 2, 3, 4, 4, 4, 5};
-//        elementOccurrence2(A);
+        elementOccurrence2(A);
 
 //        T.C. - O(maxElementOfArray) ~ O(N)
 //        S.C. - O(maxElementOfArray) ~ O(1)
 
-        int []A = {10, 1, 20, 30, 50, 10000, 80, 100};
-        minMaxInArray(A);
+//        int []A = {10, 1, 20, 30, 50, 10000, 80, 100};
+//        minMaxInArray(A);
 
 //        T.C. - O(N)
 //        S.C. - O(1)

@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/S03_Arrays/L01_Easy/L01_Easy.iml" filepath="$PROJECT_DIR$/S03_Arrays/L01_Easy/L01_Easy.iml" />
       <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/L01_Java_Basics/L01_Java_Basics.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/L01_Java_Basics/L01_Java_Basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/S02_Sorting_Techniques/L01_Sorting_I/L01_Sorting_I.iml" filepath="$PROJECT_DIR$/S02_Sorting_Techniques/L01_Sorting_I/L01_Sorting_I.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S04_Binary_Search/L02_BS/L02_BS.iml" filepath="$PROJECT_DIR$/S04_Binary_Search/L02_BS/L02_BS.iml" />
       <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/L02_Logic_Building/L02_Logic_Building.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/L02_Logic_Building/L02_Logic_Building.iml" />
       <module fileurl="file://$PROJECT_DIR$/S03_Arrays/L02_Medium/L02_Medium.iml" filepath="$PROJECT_DIR$/S03_Arrays/L02_Medium/L02_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/S02_Sorting_Techniques/L02_Sorting_II/L02_Sorting_II.iml" filepath="$PROJECT_DIR$/S02_Sorting_Techniques/L02_Sorting_II/L02_Sorting_II.iml" />
@@ -16,6 +17,8 @@
       <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/L05_Recursion_Basics/L05_Recursion_Basics.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/L05_Recursion_Basics/L05_Recursion_Basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/L06_Hashing_Basics/L06_Hashing_Basics.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/L06_Hashing_Basics/L06_Hashing_Basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/S01_Learn_The_Basics.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/S01_Learn_The_Basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S01_Learn_The_Basics/S01_Revision/S01_Revision.iml" filepath="$PROJECT_DIR$/S01_Learn_The_Basics/S01_Revision/S01_Revision.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S02_Sorting_Techniques/S02_Revision/S02_Revision.iml" filepath="$PROJECT_DIR$/S02_Sorting_Techniques/S02_Revision/S02_Revision.iml" />
       <module fileurl="file://$PROJECT_DIR$/S02_Sorting_Techniques/S02_Sorting_Techniques.iml" filepath="$PROJECT_DIR$/S02_Sorting_Techniques/S02_Sorting_Techniques.iml" />
       <module fileurl="file://$PROJECT_DIR$/S03_Arrays/S03_Arrays.iml" filepath="$PROJECT_DIR$/S03_Arrays/S03_Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/S04_Binary_Search/S04_Binary_Search.iml" filepath="$PROJECT_DIR$/S04_Binary_Search/S04_Binary_Search.iml" />
