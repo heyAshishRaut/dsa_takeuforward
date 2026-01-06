@@ -75,7 +75,7 @@ public class Main {
         int pivot = A[high];
         int i = low - 1;
 
-        for(int j = low; j <= high - 1; j++) {
+        for(int j = low; j < high; j++) {
             if(A[j] < pivot) {
                 i++;
                 swap(A, i, j);

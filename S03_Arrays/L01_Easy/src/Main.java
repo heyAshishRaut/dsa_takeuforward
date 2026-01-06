@@ -120,6 +120,11 @@ public class Main {
             end--;
         }
     }
+//    [1,2,3,4,5], k=2 → [4,5,1,2,3]
+
+//    reverse - [5, 4, 3, 2, 1] - full reversal
+//    reverse - [4, 5, 3, 4, 5] - 0 to K - 1
+//    reverse - [4, 5, 3, 4, 5] - 0 to K - 1
 
     public static void moveZeroesToEnd(int []A) {
         int idx = 0;
