@@ -3,6 +3,7 @@ Sorting Techniques
 - Sorting I
 - Sorting II
 
+Important -
 | Algorithm      | Stable  | In-Place
 | -------------- | ------  | --------
 | Bubble Sort    | ✅      | ✅
