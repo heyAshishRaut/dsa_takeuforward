@@ -115,6 +115,34 @@ public class Main {
         }
     }
 
+    public static int majorityElement02(int []A) {
+        int count = 0, element = -1;
+
+        for(int i = 0; i < A.length; i++) {
+            if(count == 0) {
+                count = 1;
+                element = A[i];
+            }
+            if(A[i] == element) {
+                count++;
+            }
+            else {
+                count--;
+            }
+        }
+
+        int new_count = 0;
+        for(int i = 0; i < A.length; i++) {
+            if(A[i] == element) {
+                new_count++;
+            }
+            if(new_count > A.length / 2) {
+                return element;
+            }
+        }
+      return -1;
+    }
+
     public static void kadaneAlgo(int []A) {
         int max = Integer.MIN_VALUE;
         int sum = 0;
@@ -168,7 +196,12 @@ public class Main {
         System.out.println( );
     }
 
+    /*
+    Lexicographic - smaller comes first, larger comes last
+    A - [1, 2, 3] - [1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1] here we can see that 123 is smaller than 132 and respectively.
+    */
     public static void nextPermutation(int []A) {
+        // Pivot - A[i] < A[i + 1]
         int pivot = -1;
         for(int i = A.length - 2; i >= 0; i--) {
             if(A[i] < A[i + 1]) {
@@ -431,14 +464,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int []A = {102, 1, 2, 100, 101, 3, 4};
+        int []A = {7, 0, 7, 1, 7, 7, 7, 2, 7};
+
         int [][]C = {
                 {1, 1, 1, 0},
                 {1, 1, 1, 0},
                 {1, 1, 0, 0}
         };
-        System.out.println(C[0].length);
-        System.out.println(C.length);
 
 //        twoSum01(A, 14);
 //        T.C. - O(N)
@@ -459,6 +491,9 @@ public class Main {
 //        majorityElement(A);
 //        T.C. - O(2N)
 //        S.C. - O(N)
+
+//        int element = majorityElement02(A);
+//        System.out.println(element);
 
 //        kadaneAlgo(A);
 //        T.C. - O(N)
