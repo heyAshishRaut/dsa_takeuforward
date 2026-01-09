@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class Main {
+    // Print Element
+    // nCr = n! / (n - r)! * r!
     public static void pascalTriangleType01(int row, int col) {
         row = row - 1;
         col = col - 1;
@@ -17,6 +19,7 @@ public class Main {
         System.out.println(ans);
     }
 
+    // Print Particular Row
     public static void pascalTriangleType02(int row) {
         row = row - 1;
         ArrayList<Integer> list = new ArrayList<>();
@@ -83,6 +86,7 @@ public class Main {
         System.out.println(parent);
     }
 
+    // Find the elements that appears more than N/3 times in the array
     public static List<Integer> majorityElement(int[] nums) {
         List<Integer> ans = new ArrayList<>();
         int count1 = 0, maj1 = Integer.MIN_VALUE, count2 = 0, maj2 = Integer.MIN_VALUE;
@@ -110,6 +114,8 @@ public class Main {
 
         count1 = 0;
         count2 = 0;
+
+        // Why we are running below for loop
         for(int i = 0; i < nums.length; i++) {
             if(maj1 == nums[i]) {
                 count1++;
@@ -120,6 +126,7 @@ public class Main {
         }
 
         int min = (int)(nums.length / 3) + 1;
+
         if(count1 >= min) {
             ans.add(maj1);
         }
@@ -176,10 +183,10 @@ public class Main {
                 }
              }
         }
-
         System.out.println(parent);
     }
 
+    // *****
     public static void sumOfThreeOptimised(int []nums, int target) {
         List<List<Integer>> parent = new ArrayList<>();
         Arrays.sort(nums);
@@ -412,10 +419,12 @@ public class Main {
             if(missing && repeating) {
                 break;
             }
+
             if(res[i] == 0) {
                 System.out.println("Missing number is " + i);
                 missing = true;
             }
+
             if(res[i] > 1) {
                 System.out.println("Repeating number is " + i);
                 repeating = true;
