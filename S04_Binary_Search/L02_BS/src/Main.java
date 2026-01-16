@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static int findSquareRoot(int num) {
         int low = 1, high = num, ans = -1;
@@ -243,6 +245,36 @@ public class Main {
         return low + k;
     }
 
+    public static void aggresiveCow(int []nums, int cows) {
+        Arrays.sort(nums);
+
+        int low = 1, high = nums[nums.length - 1] - nums[0], ans = 0;
+
+        while(low <= high) {
+            int mid = low + (high - low) / 2;
+            if(isPossible(nums, mid, cows)) {
+                ans = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        System.out.println(ans);
+    }
+
+    public static boolean isPossible(int []nums, int dist, int cows) {
+        cows--;
+        int prevPos = nums[0];
+
+        for(int i = 1; i < nums.length; i++) {
+            if(nums[i] - prevPos >= dist && cows > 0) {
+                cows--;
+                prevPos = nums[i];
+            }
+        }
+        return cows == 0;
+    }
+
     public static void main(String[] args) {
 //        01
 //        int ans = findSquareRoot(27);
@@ -265,5 +297,9 @@ public class Main {
 //        05
 //        int []nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 //        ship(nums, 5);
+
+//        06
+//        int []nums = {0, 3, 4, 7, 10, 9};
+//        aggresiveCow(nums, 4);
     }
 }
