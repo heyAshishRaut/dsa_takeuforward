@@ -19,6 +19,9 @@ public class Main {
     }
 
     public static void lowerBound(int []nums, int target) {
+        // The lower bound algorithm finds the first or the smallest index in a sorted array
+        // where the value at that index is greater than or equal to a given key i.e. x.
+
         int low = 0, high = nums.length - 1;
         int res = nums.length;
 
@@ -41,6 +44,9 @@ public class Main {
     }
 
     public static void upperBound(int []nums, int target) {
+        // The upper bound algorithm finds the first or the smallest index in a sorted
+        // array where the value at that index is greater than the given key i.e. x.
+
         int low = 0, high = nums.length - 1;
         int res = nums.length;
 
@@ -79,9 +85,11 @@ public class Main {
         return res;
     }
 
-    // The floor of x is the largest element in the array which is smaller than or equal to x. The ceiling of x is
-    // the smallest element in the array greater than or equal to x
     public static int floor(int []nums, int target) {
+        // The floor of x is the largest element in the array which is smaller than or
+        // equal to x. The ceiling of x is the smallest element in the array greater
+        // than or equal to x
+
         int res = -1;
         int low = 0, high = nums.length - 1;
 
@@ -249,7 +257,7 @@ public class Main {
             if(nums[mid] == target) {
                 return mid;
             }
-            if(nums[low] == target && target == nums[high]) {
+            if(nums[low] == nums[mid] && nums[mid] == nums[high]) {
                 low = low + 1;
                 high = high - 1;
                 continue;
